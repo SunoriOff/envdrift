@@ -1,0 +1,7 @@
+- id: envdrift
+  name: envdrift
+  description: Detect drift between .env, .env.example and code.
+  entry: envdrift check
+  language: python
+  pass_filenames: false
+  always_run: true

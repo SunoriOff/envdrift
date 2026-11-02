@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "envdrift"
+version = "0.1.0"
+description = "Detect drift between your .env, .env.example and the environment variables your code actually uses."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "WTFPL" }
+authors = [{ name = "Joris Pelaud" }]
+keywords = ["dotenv", "env", "environment-variables", "cli", "devtools", "ci", "secrets"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+envdrift = "envdrift.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SunoriOff/envdrift"
+Issues = "https://github.com/SunoriOff/envdrift/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
